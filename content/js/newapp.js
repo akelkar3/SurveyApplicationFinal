@@ -168,7 +168,7 @@ self.showUserDetailTable= function (tabledata) {
 }
 
 self.makeQRCode =function (params) {
-    qrcode.makeCode(self.newemail+"_SEPERATOR"+self.newpassword);
+    qrcode.makeCode(self.newemail()+"_SEPERATOR_"+self.newpassword());
     $('#qrSpace').show();
 }
     self.saveUser = function () {

@@ -19,7 +19,7 @@ function AppViewModel() {
         window.location.reload();
     }
     self.makeQRCode =function (params) {
-        qrcode.makeCode(self.newemail()+"_SEPERATOR"+self.newpassword());
+        qrcode.makeCode(self.newemail()+"_SEPERATOR_"+self.newpassword());
         $('#qrSpace').show();
     }
    
