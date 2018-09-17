@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -424,6 +425,8 @@ if (this.token == null)
                           Name.setText("Your response has been received. Thank You!");
                             RadioGroup rg = activity.findViewById(R.id.radioGroup);
                             rg.setVisibility(View.INVISIBLE);
+                            Button finish=activity.findViewById(R.id.btnSubmitResponse);
+                            finish.setVisibility(View.INVISIBLE);
                         }
                         //   Toast.makeText(activity, "token created successfully", Toast.LENGTH_SHORT).show();
                         //do something more.

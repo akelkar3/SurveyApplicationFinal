@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,7 @@ showOptions();
         question = findViewById(R.id.questionText);
         Button finish= findViewById(R.id.btnSubmitResponse);
 
+
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +55,9 @@ showOptions();
         });
 
         //usign the token get the question data from server make an ajax call.
-
+       final RadioGroup rg = findViewById(R.id.radioGroup);
          final ImageButton next=   findViewById(R.id.btnNext);
+        next.setVisibility(View.INVISIBLE);
          next.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
@@ -77,6 +80,7 @@ showOptions();
                          questionText=Questions[QuestionIndex];
                          showOptions();
                          question.setText(questionText);
+                         rg.clearCheck();
                          QuestionIndex++;
 
                      }
@@ -209,7 +213,7 @@ private int totalScore(){
         int temp =QuestionIndex;
         switch ( temp){
             case 0:
-                if ( AnswerIndex ==0){
+                if ( answers[0] ==0){
                     QuestionIndex=8;
                     answers[1]=100;
                     answers[2]=100;
@@ -278,6 +282,7 @@ private int totalScore(){
                     answers[QuestionIndex]=4;
                     break;
         }
+
         }
         else{
             finsish.setVisibility(View.VISIBLE);
