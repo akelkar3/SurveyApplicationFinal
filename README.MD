@@ -1,4 +1,4 @@
-Mobile App
+
 URL mapping:
 
 the webportal is accessible at http://18.223.110.166:5000/index.html
@@ -18,7 +18,7 @@ The mobile application code is stored in the
 
 
 
-
+Mobile App
 
 The mobile app should provide authentication, using a username and password mechanism. This app is only used by the patient role.
 The mobile app should present the survey questions in the survey provided [Link (Links to an external site.)Links to an external site.]. The survey questions should be presented in a usable way to the user and should not be presented as a long list of questions. The user should be able to move from one screen to the other only when they answer the questions on the current app view. Your survey should provide validation to the user input and should alert the user when incorrect input is provided.
