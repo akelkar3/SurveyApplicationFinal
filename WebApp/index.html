@@ -77,8 +77,14 @@
           </div>
           <button type="submit" class="btn btn-primary" data-bind="click:$root.saveUser" >&nbsp;&nbsp;Save&nbsp;&nbsp;</button>
         </form>
+       
   </div>
   <br/><br/>
+  <div id="qrSpace">
+    <h4>QR code for recently added user. <button class="btn btn-sm btn-dark" data-bind="click:$root.toggleQRCodeDisplay"> <i id="eyeIcon" class="fas fa-eye-slash float-right" ></i></button></h4>
+    <p>Please scan this qrcode in user's mobile app to directly log into survey.</p>
+  <div id="qrcode"></div>
+</div>
   <table id="table_id"  class="display ">
     <thead class="thead-dark">
         <tr>
@@ -107,7 +113,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="content/js/crossdomain.js"></script>
     <script src="content/js/toast.js"></script>
-    
+    <script  src="content/js/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="content/js/knockout.js"></script>
@@ -121,7 +127,8 @@
 <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 
-    <script src="content/js/newapp.js"></script>
+   
+<script src="content/js/newapp.js"></script>
     
 
   </body>

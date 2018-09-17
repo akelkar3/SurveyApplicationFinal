@@ -2,7 +2,7 @@
 
 function AppViewModel() {
     var self= this;
-    
+    var qrcode = new QRCode("qrcode");
     self.email=ko.observable('');
     self.password=ko.observable('');
     self.urlIP=ko.observable('http://18.223.110.166:5000');
@@ -19,6 +19,11 @@ function AppViewModel() {
         window.location.reload();
     }
 
+  
+    self.toggleQRCodeDisplay= function (params) {
+        $('#qrcode').toggle();
+        $('#eyeIcon').toggleClass('fa-eye fa-eye-slash');
+    }
     self.login = function() {
       
     $.ajax({
@@ -162,6 +167,10 @@ self.showUserDetailTable= function (tabledata) {
         } );
 }
 
+self.makeQRCode =function (params) {
+    qrcode.makeCode(self.newemail+"_SEPERATOR"+self.newpassword);
+    $('#qrSpace').show();
+}
     self.saveUser = function () {
         //add user ajax to be called here
         $.ajax({
@@ -187,8 +196,8 @@ self.showUserDetailTable= function (tabledata) {
                     icon: 'success'});
         $('#addUser').slideToggle("slow");
                 
-                    self.getData();
-                    
+                   // self.getData();
+                    self.makeQRCode()
                     }
                     else{
                         $.toast({heading:'error',text:result.message, icon: 'error'});
@@ -217,6 +226,8 @@ self.showUserForm= function(){
 // }
 
 //initialisation of the page goes here
+$('#qrSpace').hide();
+
 if((self.token()==null || self.token()=="")){
 $('#usertable').hide();}else{
     self.getData();
